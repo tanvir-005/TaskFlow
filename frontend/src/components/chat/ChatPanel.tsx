@@ -36,7 +36,8 @@ export function ChatPanel({
   }, [messages, sending]);
 
   return (
-    <section className="flex min-h-[520px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/70 lg:min-h-[680px]">
+    // <section className="flex min-h-[520px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/70 lg:min-h-[680px]">
+    <section className="flex h-[min(680px,calc(100dvh-8rem))] min-h-[420px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/70">
       <header className="flex items-center justify-between gap-3 border-b border-zinc-200 bg-white px-4 py-4 sm:px-5">
         <div className="flex min-w-0 items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white">
@@ -68,7 +69,7 @@ export function ChatPanel({
         </button>
       </header>
 
-      <div className="flex-1 space-y-5 overflow-y-auto px-4 py-5 sm:px-5">
+        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-contain px-4 py-5 sm:px-5">
         {loadingHistory ? (
           <div
             className="flex min-h-64 flex-col items-center justify-center gap-3 text-zinc-500"

@@ -16,6 +16,7 @@ import { TaskList } from "./components/tasks/TaskList";
 import { TaskSummary } from "./components/tasks/TaskSummary";
 import { useChat } from "./hooks/useChat";
 import { useTasks } from "./hooks/useTasks";
+import type { Task } from "./types/task";
 
 function App() {
   const {
@@ -25,11 +26,20 @@ function App() {
     filter,
     setFilter,
     refreshTasks,
+    setTasksFromChat,
   } = useTasks();
 
-  const refreshTasksAfterChat = useCallback(async () => {
-    await refreshTasks();
-  }, [refreshTasks]);
+  const refreshTasksAfterChat = useCallback(
+    async (updatedTasks?: Task[]) => {
+      if (updatedTasks) {
+        setTasksFromChat(updatedTasks);
+        return;
+      }
+
+      await refreshTasks();
+    },
+    [refreshTasks, setTasksFromChat],
+  );
 
   const {
     messages,

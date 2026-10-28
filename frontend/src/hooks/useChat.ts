@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../lib/api";
 import { getSessionId } from "../lib/session";
-import type { ChatMessage } from "../types/task";
+import type { ChatMessage, Task } from "../types/task";
 
 interface UseChatOptions {
-  onTasksChanged?: () => Promise<void>;
+  onTasksChanged?: (tasks?: Task[]) => Promise<void>;
 }
 
 interface UseChatReturn {
@@ -133,7 +133,7 @@ export function useChat(
         ]);
 
         if (response.ok && options.onTasksChanged) {
-          await options.onTasksChanged();
+          await options.onTasksChanged(response.tasks);
         }
       } catch (err) {
         const message =

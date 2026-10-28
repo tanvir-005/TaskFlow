@@ -9,6 +9,7 @@ interface UseTasksReturn {
   filter: TaskStatus | "all";
   setFilter: (filter: TaskStatus | "all") => void;
   refreshTasks: () => Promise<void>;
+  setTasksFromChat: (tasks: Task[]) => void;
 }
 
 export function useTasks(): UseTasksReturn {
@@ -42,6 +43,17 @@ export function useTasks(): UseTasksReturn {
     void refreshTasks();
   }, [refreshTasks]);
 
+  const setTasksFromChat = useCallback(
+    (updatedTasks: Task[]) => {
+      setTasks(
+        filter === "all"
+          ? updatedTasks
+          : updatedTasks.filter((task) => task.status === filter),
+      );
+    },
+    [filter],
+  );
+
   return {
     tasks,
     loading,
@@ -49,5 +61,6 @@ export function useTasks(): UseTasksReturn {
     filter,
     setFilter,
     refreshTasks,
+    setTasksFromChat,
   };
 }
