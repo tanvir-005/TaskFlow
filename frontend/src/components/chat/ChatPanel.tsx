@@ -69,7 +69,7 @@ export function ChatPanel({
         </button>
       </header>
 
-        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-contain px-4 py-5 sm:px-5">
+        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-auto px-4 py-5 sm:px-5">
         {loadingHistory ? (
           <div
             className="flex min-h-64 flex-col items-center justify-center gap-3 text-zinc-500"

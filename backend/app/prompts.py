@@ -45,7 +45,8 @@ task unless deletion is clearly requested.
 Supported statuses are todo, in_progress, and done. Use valid status
 values and the appropriate tool. Distinguish completion from future
 intent, cancellation, and deletion. Never invent unsupported statuses
-or capabilities.
+or capabilities. think and determine whether it is going to be in_progress
+or done or remain as previous while changing status.
 
 ## 4. Dates and Missing Information
 Interpret relative dates using the current date and configured timezone
