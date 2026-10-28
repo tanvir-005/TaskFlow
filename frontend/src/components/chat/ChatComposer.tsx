@@ -75,7 +75,7 @@ export function ChatComposer({
         type="submit"
         disabled={!canSend}
         aria-label="Send message"
-        className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900 text-white transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-zinc-200 disabled:text-zinc-400"
+        className="absolute bottom-[2.75rem] right-3 flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900 text-white shadow-sm transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-zinc-200 disabled:text-zinc-400"
       >
         {sending ? (
           <LoaderCircle
