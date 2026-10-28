@@ -1,0 +1,48 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local application data
+backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# ChromaDB
+chroma/
+
+# Node.js
+node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# Build and package artifacts
+build/
+dist/
+*.egg-info/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
